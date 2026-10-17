@@ -1,0 +1,41 @@
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(900px 500px at 50% -100px, #2a2670 0%, transparent 70%), #0d0e14;
+  color: #e9eaf2; line-height: 1.55;
+}
+a { color: inherit; }
+.nav { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; padding: 20px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; }
+.link { color: #9da1b8; text-decoration: none; }
+.link:hover { color: #fff; }
+main { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
+.hero { text-align: center; padding: 48px 0 40px; }
+.hero-icon { border-radius: 26px; box-shadow: 0 20px 60px rgba(90, 75, 255, .45); }
+h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 28px 0 16px; letter-spacing: -0.02em; }
+.lead { max-width: 620px; margin: 0 auto 32px; color: #a9adc4; font-size: 18px; }
+.downloads { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: flex; flex-direction: column; align-items: center; min-width: 270px; padding: 14px 26px;
+  border-radius: 14px; text-decoration: none; background: #1b1d2a; border: 1px solid #343752;
+  transition: transform .15s, background .15s;
+}
+.btn:hover { transform: translateY(-2px); background: #23263a; }
+.btn.primary { background: linear-gradient(135deg, #8aa4ff, #5a4bff); border-color: transparent; }
+.btn.primary:hover { background: linear-gradient(135deg, #9bb1ff, #6a5cff); }
+.btn-title { font-weight: 600; font-size: 17px; }
+.btn-sub { font-size: 13px; opacity: .8; }
+.meta { color: #8c90a8; margin: 22px 0 6px; font-size: 14px; }
+.hint { color: #6d718a; font-size: 13px; margin: 0; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin: 30px 0 50px; }
+.card { background: #151722; border: 1px solid #262940; border-radius: 16px; padding: 20px; }
+.card h3 { margin: 0 0 6px; font-size: 16px; }
+.card p { margin: 0; color: #9da1b8; font-size: 14px; }
+.install { max-width: 640px; margin: 0 auto; }
+.install li { margin-bottom: 8px; color: #c4c7da; }
+code { background: #1b1d2a; padding: 2px 6px; border-radius: 6px; font-size: 13px; }
+.small { color: #8c90a8; font-size: 14px; }
+footer { text-align: center; padding: 30px 24px 50px; color: #6d718a; font-size: 14px; }
+footer a { text-decoration: none; color: #9da1b8; }
+footer a:hover { color: #fff; }

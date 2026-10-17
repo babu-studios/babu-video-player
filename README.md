@@ -127,6 +127,14 @@ inside MKV/TS may not play; AV1 in MP4/WebM plays natively through Chromium.
 `npm run dist:dev-gpl` packages the host architecture with the GPL binaries for **local testing only**; never
 distribute that output. Environment overrides: `BABU_FFMPEG_PATH` and `BABU_FFPROBE_PATH`.
 
+## Website
+
+The download page lives in `site/` and is deployed to GitHub Pages by `.github/workflows/pages.yml`. It looks up the latest release, so it needs no change per release.
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, guidelines and the pull request checklist.
+
 ## Notes
 
 - The icon is a generated placeholder (`scripts/make-icon.py`); replace `build/icon.icns`.

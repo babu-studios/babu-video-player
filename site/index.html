@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Babu Video Player — a fast, simple video player for Mac</title>
+  <meta name="description" content="Free, open-source video player for macOS. Plays MP4, MKV, MOV, AVI, WebM, HEVC and more. Native for Apple Silicon and Intel." />
+  <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><img src="icon.png" alt="" width="28" height="28" />Babu Video Player</a>
+    <a class="link" href="https://github.com/babu-studios/babu-video-player">GitHub</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-icon" src="icon.png" alt="Babu Video Player icon" width="112" height="112" />
+      <h1>Play almost any video on your Mac.</h1>
+      <p class="lead">A fast, clean, open-source player. Opens in under a second, handles MKV, AVI, HEVC and more, and never asks for your camera or microphone.</p>
+
+      <div class="downloads">
+        <a class="btn primary" id="dl-arm64" href="https://github.com/babu-studios/babu-video-player/releases/latest">
+          <span class="btn-title">Download for Apple Silicon</span>
+          <span class="btn-sub">M1, M2, M3, M4 &middot; <span data-size="arm64">.dmg</span></span>
+        </a>
+        <a class="btn" id="dl-x64" href="https://github.com/babu-studios/babu-video-player/releases/latest">
+          <span class="btn-title">Download for Intel Mac</span>
+          <span class="btn-sub">Intel processors &middot; <span data-size="x64">.dmg</span></span>
+        </a>
+      </div>
+      <p class="meta"><span id="version">Latest version</span> &middot; Free &amp; MIT licensed</p>
+      <p class="hint">Not sure which one? Apple menu &rarr; About This Mac. &ldquo;Chip: Apple M…&rdquo; means Apple Silicon; &ldquo;Processor: Intel&rdquo; means Intel.</p>
+    </section>
+
+    <section class="features">
+      <div class="card"><h3>Plays everything</h3><p>MP4, M4V, MOV, MKV, WebM, AVI, WMV, FLV, TS, MPEG, 3GP, HEVC and AV1.</p></div>
+      <div class="card"><h3>Audio &amp; subtitles</h3><p>Switch audio tracks and embedded subtitles on the fly.</p></div>
+      <div class="card"><h3>Remembers where you stopped</h3><p>Resume each file from its last position, with a recent-files list.</p></div>
+      <div class="card"><h3>Private by design</h3><p>Works offline, no telemetry, and only opens files you choose.</p></div>
+    </section>
+
+    <section class="install">
+      <h2>Install</h2>
+      <ol>
+        <li>Download the <code>.dmg</code> for your Mac and open it.</li>
+        <li>Drag <strong>Babu Video Player</strong> into Applications.</li>
+        <li>First launch: right-click the app and choose <strong>Open</strong>. The app isn't notarized yet, so macOS asks once.</li>
+        <li>To make it your default player: select a video &rarr; <strong>Get Info</strong> &rarr; <strong>Open with</strong> &rarr; <strong>Change All</strong>.</li>
+      </ol>
+      <p class="small">Still blocked? Run <code>xattr -cr "/Applications/Babu Video Player.app"</code> in Terminal.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/babu-studios/babu-video-player">Source</a> &middot;
+    <a href="https://github.com/babu-studios/babu-video-player/releases">All releases</a> &middot;
+    <a href="https://github.com/babu-studios/babu-video-player/blob/main/CONTRIBUTING.md">Contribute</a> &middot;
+    <a href="https://github.com/babu-studios/babu-video-player/issues">Report a bug</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
