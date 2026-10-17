@@ -28,7 +28,19 @@ npm rebuild esbuild ffmpeg-static
 npm run dev
 ```
 
-More: [CONTRIBUTING.md](CONTRIBUTING.md) and [architecture, adding formats, releases and licensing](docs/DEVELOPMENT.md).
+Other commands: `npm test` (unit tests) and `npm run build` (typecheck and build).
+Architecture, adding formats, releases and licensing are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+
+## Contributing
+
+This is an open-source project and contributions are welcome.
+
+1. Found a bug or have an idea? [Open an issue](https://github.com/babu-studios/babu-video-player/issues).
+2. Want to fix or build something? Fork the repo, create a branch, and open a pull request against `main`.
+   `main` is protected, so all changes go through a pull request with passing CI.
+3. Before you open the PR, run `npm run typecheck`, `npm test` and `npm run build`.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for the code guidelines and the full PR checklist.
 
 ## License
 
