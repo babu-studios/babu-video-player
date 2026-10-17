@@ -42,14 +42,31 @@
     </section>
 
     <section class="install">
-      <h2>Install</h2>
+      <h2>How to install</h2>
       <ol>
         <li>Download the <code>.dmg</code> for your Mac and open it.</li>
         <li>Drag <strong>Babu Video Player</strong> into Applications.</li>
-        <li>First launch: right-click the app and choose <strong>Open</strong>. The app isn't notarized yet, so macOS asks once.</li>
+        <li>Open it from Applications. The app isn't notarized yet, so macOS blocks the first launch. Use the steps for your macOS version below.</li>
         <li>To make it your default player: select a video &rarr; <strong>Get Info</strong> &rarr; <strong>Open with</strong> &rarr; <strong>Change All</strong>.</li>
       </ol>
-      <p class="small">Still blocked? Run <code>xattr -cr "/Applications/Babu Video Player.app"</code> in Terminal.</p>
+
+      <h3>First launch: "Babu Video Player was blocked"</h3>
+      <div class="steps">
+        <h4>macOS 15 and later (including macOS 26)</h4>
+        <ol>
+          <li>Click <strong>Done</strong>. Don't click Move to Bin.</li>
+          <li>Go to <strong>System Settings &rarr; Privacy &amp; Security</strong>.</li>
+          <li>Scroll to the message &ldquo;Babu Video Player was blocked&rdquo; and click <strong>Open Anyway</strong>. Enter your password.</li>
+        </ol>
+        <h4>macOS 14 and earlier</h4>
+        <ol>
+          <li>Right-click (or Control-click) the app in Applications and choose <strong>Open</strong>.</li>
+          <li>Click <strong>Open</strong> in the dialog.</li>
+        </ol>
+        <h4>Terminal alternative</h4>
+        <p class="small"><code>xattr -cr "/Applications/Babu Video Player.app"</code></p>
+      </div>
+      <p class="small">You only need to do this once.</p>
     </section>
   </main>
 

@@ -83,7 +83,12 @@ Get the latest `.dmg` from the [Releases page](https://github.com/babu-studios/b
 Applications. Checksums are in `SHA256SUMS.txt` (`shasum -a 256 -c SHA256SUMS.txt`).
 
 The app is not notarized, so macOS may say it "can't be opened because Apple cannot check it for malicious
-software". Right-click the app → **Open** → **Open**, or run:
+software".
+
+- **macOS 15 and later (including 26):** click **Done** (not Move to Bin), then go to System Settings →
+  Privacy & Security, scroll to "Babu Video Player was blocked", click **Open Anyway** and enter your password.
+- **macOS 14 and earlier:** right-click the app → **Open** → **Open**.
+- **Terminal:**
 
 ```bash
 xattr -cr "/Applications/Babu Video Player.app"
