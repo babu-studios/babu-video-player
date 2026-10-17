@@ -43,7 +43,7 @@ node_modules/ffmpeg-static/ffmpeg -f lavfi -i testsrc=size=640x360:rate=30:durat
   -f lavfi -i sine=duration=20 -c:v libx264 -c:a aac -pix_fmt yuv420p sample.mp4
 ```
 
-Read [Architecture](README.md#architecture) in the README before changing playback. In short: the renderer
+Read [Architecture](docs/DEVELOPMENT.md#architecture) in the development notes before changing playback. In short: the renderer
 plays natively with `<video>` when it can, and otherwise the main process runs ffmpeg and streams fragmented MP4
 over the `babu-video-player://` protocol.
 
@@ -60,7 +60,7 @@ over the `babu-video-player://` protocol.
 - Don't add telemetry or network calls. The app works fully offline.
 - Any ffmpeg process must go through `electron/media/processes.ts` so it is killed on quit and file switch.
 - Add or update tests for changes to format detection (`tests/formats.test.ts`) and ffmpeg arguments
-  (`tests/ffmpegArgs.test.ts`). New formats: see [Adding a format](README.md#adding-a-format).
+  (`tests/ffmpegArgs.test.ts`). New formats: see [Adding a format](docs/DEVELOPMENT.md#adding-a-format).
 
 ## Pull request checklist
 
@@ -87,12 +87,12 @@ assets you don't have the right to share.
 
 ffmpeg licensing needs care. Release builds ship an **LGPL** ffmpeg built by `scripts/build-ffmpeg.sh`. Do not
 add flags such as `--enable-gpl`, `--enable-nonfree` or `--enable-libx264` to that script, and don't bundle other
-GPL or non-free binaries. See [Licensing](README.md#licensing) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+GPL or non-free binaries. See [Licensing](docs/DEVELOPMENT.md#licensing) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Releases (maintainers)
 
 Bump `version` in `package.json`, commit, then push a tag such as `v0.1.1`. GitHub Actions builds the arm64 and
-x64 `.dmg` files and publishes the release. Details are in [Publishing a release](README.md#publishing-a-release).
+x64 `.dmg` files and publishes the release. Details are in [Publishing a release](docs/DEVELOPMENT.md#publishing-a-release).
 
 ## Security
 
