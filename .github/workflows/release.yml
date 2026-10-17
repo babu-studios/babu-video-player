@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - { arch: arm64, runner: macos-14 }
+          - { arch: x64, runner: macos-15-intel }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci --ignore-scripts
+          npm rebuild esbuild
+          node node_modules/electron/install.js
+
+      - name: Test
+        run: npm test
+
+      - name: Cache LGPL ffmpeg
+        id: ffmpeg-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor/ffmpeg/${{ matrix.arch }}
+          key: ffmpeg-lgpl-${{ matrix.arch }}-${{ hashFiles('scripts/build-ffmpeg.sh') }}
+
+      - name: Build LGPL ffmpeg
+        if: steps.ffmpeg-cache.outputs.cache-hit != 'true'
+        run: scripts/build-ffmpeg.sh
+
+      - name: Build app
+        run: |
+          npm run build
+          node scripts/check-ffmpeg.mjs --host-only
+          npx electron-builder --mac --${{ matrix.arch }} --publish never
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dmg-${{ matrix.arch }}
+          path: release/*.dmg
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Checksums
+        working-directory: dist
+        run: shasum -a 256 *.dmg > SHA256SUMS.txt
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+          draft: false

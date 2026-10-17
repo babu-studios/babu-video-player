@@ -1,0 +1,47 @@
+{
+  "name": "babu-video-player",
+  "productName": "Babu Video Player",
+  "version": "0.1.0",
+  "description": "Simple universal video player for macOS",
+  "main": "dist-electron/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit",
+    "build:electron": "node scripts/build-electron.mjs",
+    "build": "npm run typecheck && vite build && npm run build:electron",
+    "test": "vitest run",
+    "dist": "npm run build && node scripts/check-ffmpeg.mjs && electron-builder --mac --arm64 --x64",
+    "dist:dev-gpl": "npm run build && node scripts/check-ffmpeg.mjs --dev-gpl --host-only && electron-builder --mac --dir"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/ffprobe-static": "^2.0.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "ffmpeg-static": "^5.3.0",
+    "ffprobe-static": "^3.1.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5",
+    "wait-on": "^9.5.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "ffmpeg-static@5.3.0": true
+  },
+  "author": "Babu Studios",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babu-studios/babu-video-player.git"
+  }
+}

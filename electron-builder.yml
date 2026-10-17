@@ -1,0 +1,45 @@
+appId: com.babu.videoplayer
+productName: Babu Video Player
+copyright: Copyright © Babu Studios
+directories:
+  output: release
+  buildResources: build
+afterPack: scripts/after-pack.cjs
+files:
+  - dist-electron/**
+  - dist-renderer/**
+  - package.json
+# LGPL ffmpeg/ffprobe per architecture, see README "Licensing".
+extraResources:
+  - from: vendor/ffmpeg/${arch}
+    to: bin
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+mac:
+  category: public.app-category.video
+  icon: build/icon.icns
+  target: dmg
+  extendInfo:
+    CFBundleDisplayName: Babu Video Player
+  fileAssociations:
+    - { ext: mp4, name: MPEG-4 Video, role: Viewer }
+    - { ext: m4v, name: M4V Video, role: Viewer }
+    - { ext: mov, name: QuickTime Movie, role: Viewer }
+    - { ext: mkv, name: Matroska Video, role: Viewer }
+    - { ext: webm, name: WebM Video, role: Viewer }
+    - { ext: avi, name: AVI Video, role: Viewer }
+    - { ext: wmv, name: Windows Media Video, role: Viewer }
+    - { ext: flv, name: Flash Video, role: Viewer }
+    - { ext: ts, name: MPEG Transport Stream, role: Viewer }
+    - { ext: mts, name: AVCHD Video, role: Viewer }
+    - { ext: m2ts, name: Blu-ray MPEG-2 Transport Stream, role: Viewer }
+    - { ext: mpeg, name: MPEG Video, role: Viewer }
+    - { ext: mpg, name: MPEG Video, role: Viewer }
+    - { ext: 3gp, name: 3GPP Video, role: Viewer }
+    - { ext: hevc, name: HEVC Video, role: Viewer }
+    - { ext: h265, name: HEVC Video, role: Viewer }
+    - { ext: av1, name: AV1 Video, role: Viewer }
+    - { ext: ogv, name: Ogg Video, role: Viewer }
+artifactName: ${productName}-${version}-${arch}.${ext}
+dmg:
+  title: Babu Video Player

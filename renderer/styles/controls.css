@@ -1,0 +1,14 @@
+.controls { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 10px; z-index: 10;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85)); transition: opacity 0.2s; }
+.controls.is-hidden { opacity: 0; pointer-events: none; }
+.controls-row { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; gap: 8px; }
+.controls-group { display: flex; align-items: center; gap: 2px; }
+.icon-btn { background: none; border: 0; color: var(--text); width: 34px; height: 34px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer; gap: 4px; }
+.icon-btn:hover { background: rgba(255, 255, 255, 0.12); }
+.icon-btn.is-active { color: var(--accent); }
+.time { color: var(--muted); margin-left: 10px; font-variant-numeric: tabular-nums; }
+.volume { display: flex; align-items: center; }
+.volume-slider { width: 70px; }
+.dropdown-text { font-size: 12px; min-width: 32px; }
+.dropdown-btn { width: auto; padding: 0 8px; }

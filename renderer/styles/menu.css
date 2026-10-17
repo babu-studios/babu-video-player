@@ -1,0 +1,7 @@
+.dropdown { position: relative; }
+.dropdown-menu { position: absolute; bottom: 40px; right: 0; margin: 0; padding: 4px; list-style: none;
+  background: var(--panel); border-radius: 8px; min-width: 130px; max-height: 260px; overflow-y: auto;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5); }
+.dropdown-menu li { padding: 6px 10px; border-radius: 5px; cursor: pointer; white-space: nowrap; }
+.dropdown-menu li:hover { background: rgba(255, 255, 255, 0.1); }
+.dropdown-menu li.is-selected { color: var(--accent); }

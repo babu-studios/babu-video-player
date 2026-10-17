@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-electron
+dist-renderer
+release
+.DS_Store
+release
+vendor
