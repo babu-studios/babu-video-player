@@ -43,7 +43,7 @@ node_modules/ffmpeg-static/ffmpeg -f lavfi -i testsrc=size=640x360:rate=30:durat
   -f lavfi -i sine=duration=20 -c:v libx264 -c:a aac -pix_fmt yuv420p sample.mp4
 ```
 
-Read [Architecture](docs/DEVELOPMENT.md#architecture) in the README before changing playback. In short: the renderer
+Read [Architecture](docs/DEVELOPMENT.md#architecture) in the development notes before changing playback. In short: the renderer
 plays natively with `<video>` when it can, and otherwise the main process runs ffmpeg and streams fragmented MP4
 over the `babu-video-player://` protocol.
 
