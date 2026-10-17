@@ -39,3 +39,7 @@ code { background: #1b1d2a; padding: 2px 6px; border-radius: 6px; font-size: 13p
 footer { text-align: center; padding: 30px 24px 50px; color: #6d718a; font-size: 14px; }
 footer a { text-decoration: none; color: #9da1b8; }
 footer a:hover { color: #fff; }
+.install h3 { margin: 28px 0 10px; font-size: 18px; }
+.steps { background: #151722; border: 1px solid #262940; border-radius: 16px; padding: 6px 22px 14px; }
+.steps h4 { margin: 18px 0 6px; font-size: 15px; color: #b8bcd6; }
+.steps ol { margin: 0; padding-left: 20px; }
